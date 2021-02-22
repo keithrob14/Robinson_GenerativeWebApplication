@@ -23,9 +23,9 @@ function setup() {
   gui_setup.add(gui,'strokeWeight',1,15).step(.5);
 
 //Manual Rotation
-  gui_setup.add(gui,'rotatex',1,100).step(.25);
-  gui_setup.add(gui,'rotatey',1,100).step(.25);
-  gui_setup.add(gui,'rotatez',1,100).step(.25);
+  gui_setup.add(gui,'rotatex',1,50).step(.25);
+  gui_setup.add(gui,'rotatey',1,50).step(.25);
+  gui_setup.add(gui,'rotatez',1,50).step(.25);
   
 //Stroke Color
   gui_setup.add(gui,'strokeShade',0,255).step(1);
