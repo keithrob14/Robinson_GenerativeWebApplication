@@ -3,7 +3,7 @@ var gui;
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   frameRate(10);
-  background('lightblue')
+  //background('lightblue')
   let d = select('.div-block-3');
   d.position(0,0);
   f = select('#my-gui-container');

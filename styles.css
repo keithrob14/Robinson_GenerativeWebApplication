@@ -2,11 +2,14 @@ html,
 body {
     margin: 0;
     padding: 0;
-    border: 20px;
+    border: 5px;
+    border-style: dotted;
+    background-color: lightblue;
 }
 
 canvas {
     display: block;
+    
 }
 
 //* borrowed dat.gui styling *//
@@ -133,6 +136,8 @@ canvas {
 
 .heading {
     text-align: left;
+    margin-top: -10px;
+    margin-bottom: -10px;
 }
 
 h1 {
