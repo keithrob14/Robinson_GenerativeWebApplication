@@ -10,6 +10,7 @@ function setup() {
 
   gui = new Gui();
   let gui_setup = new dat.GUI();
+    
 
 //Size of Sphere
   gui_setup.add(gui,'size',50,200).step(1);  
@@ -34,8 +35,13 @@ function setup() {
   gui_setup.add(gui,'moveLR',-400,400).step(1);
   gui_setup.add(gui,'moveUD',-400,400).step(1);
     
-  //gui_setup.add(gui,'ShowDescription').onChange(description);
+  gui_setup.add(gui,'description').onChange(description);
+    
+  //gui_setup.addColor(gui,'dColor').onChange(description);
+  gui_setup.open();
+  
 } 
+
 
 
 function draw() {
@@ -54,11 +60,16 @@ function draw() {
 }
 
 
-function update() {
-    const context = canvas.getContext('2d');
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    redraw();
+function description(){
+    //f.style('color', gui.dColor);
+    if(gui.description){
+        d.style('display','block');
+        d.show();
+    }else {
+        d.style('display','none')
+    }
 }
+
 
 function Gui(){
   this.size = 50;
@@ -71,15 +82,26 @@ function Gui(){
   this.strokeShade=255;
   this.moveLR=0;
   this.moveUD=0;
-  //this.ShowDescription= true;
+  this.description= true;
+  this.dColor = '#000000';
 }
 
 
-function mouseDragged(){
-  redraw();
+function keyPressed() {
+if (keyCode === DOWN_ARROW) {
+    save("mySVG.svg"); 
+    print("saved svg");
+    noLoop(); 
+  }
+}
+
+function mousePressed(){
+  resizeCanvas(windowWidth, windowHeight);
+  background('lightblue');
+    redraw();
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
-    background('lightblue')
+  background('lightblue')
 }
