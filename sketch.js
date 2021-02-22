@@ -32,8 +32,8 @@ function setup() {
   
   
 //Stroke Color
-  gui_setup.add(gui,'moveLR',-400,400).step(1);
-  gui_setup.add(gui,'moveUD',-400,400).step(1);
+  gui_setup.add(gui,'moveLR',-400,400).step(.25);
+  gui_setup.add(gui,'moveUD',-400,400).step(.25);
     
   gui_setup.add(gui,'description').onChange(description);
     
