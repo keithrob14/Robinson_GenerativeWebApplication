@@ -61,7 +61,7 @@ function draw() {
 
 
 function description(){
-    //f.style('color', gui.dColor);
+    f.style('color', gui.dColor);
     if(gui.description){
         d.style('display','block');
         d.show();
@@ -95,7 +95,7 @@ if (keyCode === DOWN_ARROW) {
   }
 }
 
-function mousePressed(){
+function doubleClicked(){
   resizeCanvas(windowWidth, windowHeight);
   background('lightblue');
     redraw();
