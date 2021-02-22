@@ -2,10 +2,11 @@ var gui;
  
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
-    let d = select('.div-block-3');
-    d.position(0,0);
   frameRate(10);
   background('lightblue')
+  let d = select('.div-block-3');
+  d.position(0,0);
+  f = select('#my-gui-container');
 
   gui = new Gui();
   let gui_setup = new dat.GUI();
@@ -32,8 +33,10 @@ function setup() {
 //Stroke Color
   gui_setup.add(gui,'moveLR',-400,400).step(1);
   gui_setup.add(gui,'moveUD',-400,400).step(1);
-  
+    
+  //gui_setup.add(gui,'ShowDescription').onChange(description);
 } 
+
 
 function draw() {
   translate(gui.moveLR,gui.moveUD);
@@ -47,14 +50,17 @@ function draw() {
   fill(100, gui.green, gui.blue);
   stroke(gui.strokeShade);
   
-  strokeWeight(gui.strokeWeight);
-  
-  
+  strokeWeight(gui.strokeWeight); 
 }
 
 
+function update() {
+    const context = canvas.getContext('2d');
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    redraw();
+}
+
 function Gui(){
-  
   this.size = 50;
   this.green = 0;
   this.blue = 0;
@@ -65,6 +71,7 @@ function Gui(){
   this.strokeShade=255;
   this.moveLR=0;
   this.moveUD=0;
+  //this.ShowDescription= true;
 }
 
 
